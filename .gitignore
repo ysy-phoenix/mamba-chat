@@ -4,5 +4,5 @@ __pycache__/
 .vscode/
 **/runs/*
 serialization_dir/
-
+profiler/
 bert_bookcorpus.token.128/

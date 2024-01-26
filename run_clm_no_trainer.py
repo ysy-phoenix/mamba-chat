@@ -54,7 +54,7 @@ from transformers import (
 )
 from transformers.utils import check_min_version, send_example_telemetry
 from transformers.utils.versions import require_version
-
+from torch.profiler import profile, record_function, ProfilerActivity, tensorboard_trace_handler
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
 # check_min_version("4.38.0.dev0")
@@ -238,6 +238,19 @@ def parse_args():
             "If passed, LLM loading time and RAM consumption will be benefited."
         ),
     )
+    parser.add_argument(
+        "--profile",
+        action="store_true",
+        default=False,
+        help=(
+            "If passed, will profile the training script. "
+        ),
+    )
+    parser.add_argument(
+        "--profile_dir",
+        type=str,
+        default="profiler",
+    )
     args = parser.parse_args()
 
     # update output_dir
@@ -250,6 +263,7 @@ def parse_args():
         f"{timestamp}"
     )
     args.output_dir = os.path.join(args.output_dir, log_filename)
+    args.profile_dir = os.path.join(args.profile_dir, log_filename)
 
     # Sanity checks
     if args.dataset_name is None and args.train_file is None and args.validation_file is None:
@@ -418,6 +432,7 @@ def main():
             args.model_name_or_path,
             from_tf=bool(".ckpt" in args.model_name_or_path),
             config=config,
+            torch_dtype=torch.float16,
             low_cpu_mem_usage=args.low_cpu_mem_usage,
             trust_remote_code=args.trust_remote_code,
         )
@@ -626,6 +641,19 @@ def main():
             active_dataloader = accelerator.skip_first_batches(train_dataloader, resume_step)
         else:
             active_dataloader = train_dataloader
+
+        # Conditionally start profiling
+        if args.profile and accelerator.is_local_main_process:
+            prof = profile(
+                activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
+                on_trace_ready=tensorboard_trace_handler(args.profile_dir),
+                record_shapes=True,
+                profile_memory=True,
+                with_flops=True,
+                with_stack=True
+            )
+            prof.__enter__()  # Manually start the profiler
+
         for step, batch in enumerate(active_dataloader):
             with accelerator.accumulate(model):
                 outputs = model(**batch)
@@ -651,6 +679,10 @@ def main():
                     accelerator.save_state(output_dir)
             if completed_steps >= args.max_train_steps:
                 break
+
+        # Stop profiling and write data to TensorBoard
+        if args.profile and accelerator.is_local_main_process:
+            prof.__exit__(None, None, None)
 
         model.eval()
         losses = []
@@ -706,11 +738,11 @@ def main():
     if args.output_dir is not None:
         accelerator.wait_for_everyone()
         unwrapped_model = accelerator.unwrap_model(model)
-        unwrapped_model.save_pretrained(
-            args.output_dir, is_main_process=accelerator.is_main_process, save_function=accelerator.save
-        )
+        # unwrapped_model.save_pretrained(
+        #     args.output_dir, is_main_process=accelerator.is_main_process, save_function=accelerator.save
+        # )
         if accelerator.is_main_process:
-            tokenizer.save_pretrained(args.output_dir)
+            # tokenizer.save_pretrained(args.output_dir)
             if args.push_to_hub:
                 repo.push_to_hub(commit_message="End of training", auto_lfs_prune=True)
 

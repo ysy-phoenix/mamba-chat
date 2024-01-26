@@ -6,3 +6,4 @@ mamba-ssm==1.0.1
 accelerate
 bitsandbytes
 scipy
+torch-tb-profiler

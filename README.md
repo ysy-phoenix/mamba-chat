@@ -65,6 +65,69 @@ python train_mamba.py --model state-spaces/mamba-2.8b --tokenizer EleutherAI/gpt
 torchrun --nproc_per_node 8 train_mamba.py --model state-spaces/mamba-130m --tokenizer EleutherAI/gpt-neox-20b --learning_rate 5e-5 --batch_size 1 --data_path ./data/ultrachat_small.jsonl --num_epochs 3
 ```
 
+## For no trainer
+
+**bert**
+```bash
+export CUDA_VISIBLE_DEVIOBCES=0,1,2,3,4,5,6,7
+accelerate launch run_mlm_no_trainer.py \
+--model_type bert \
+--dataset_name bookcorpus \
+--dataset_config_name plain_text \
+--model_name_or_path bert-base-uncased \
+--per_device_train_batch_size 8 \
+--per_device_eval_batch_size 8 \
+--with_tracking \
+--report_to tensorboard \
+--output_dir serialization_dir \
+--learning_rate 1e-3 \
+--max_seq_length 128 \
+--num_train_epochs 20 \
+--load_tokenized_datasets bert_bookcorpus.token.128 \
+--checkpointing_steps 2000
+```
+
+**opt**
+```bash
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+accelerate launch run_clm_no_trainer.py \
+--model_name_or_path facebook/opt-125m \
+--dataset_name wikitext \
+--dataset_config_name wikitext-2-raw-v1 \
+--per_device_train_batch_size 8 \
+--per_device_eval_batch_size 8 \
+--with_tracking \
+--report_to tensorboard \
+--output_dir serialization_dir \
+--learning_rate 1e-3 \
+--block_size 128 \
+--num_train_epochs 1 \
+--checkpointing_steps 2000 \
+--profile
+```
+
+**mamba**
+
+```bash
+export CUDA_VISIBLE_DEVIOBCES=0,1,2,3,4,5,6,7
+accelerate launch run_mamba_no_trainer.py \
+--model_name_or_path state-spaces/mamba-130m \
+--tokenizer_name EleutherAI/gpt-neox-20b \
+--dataset_name wikitext \
+--dataset_config_name wikitext-2-raw-v1 \
+--per_device_train_batch_size 8 \
+--per_device_eval_batch_size 8 \
+--with_tracking \
+--report_to tensorboard \
+--output_dir serialization_dir \
+--learning_rate 1e-3 \
+--block_size 128 \
+--num_train_epochs 1 \
+--checkpointing_steps 2000 \
+--profile
+```
+
+
 ## Citation
 
 ```
