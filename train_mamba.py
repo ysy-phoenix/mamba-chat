@@ -8,8 +8,8 @@ from trainer.mamba_trainer import MambaTrainer
 
 
 def run(args):
-        
-    model = MambaLMHeadModel.from_pretrained(args.model, dtype=torch.bfloat16, device="cuda")
+
+    model = MambaLMHeadModel.from_pretrained(args.model, dtype=torch.float32, device="cuda")
 
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer)
     tokenizer.eos_token = "<|endoftext|>"
@@ -34,9 +34,10 @@ def run(args):
             num_train_epochs=args.num_epochs,
             per_device_train_batch_size=args.batch_size,
             gradient_accumulation_steps=args.gradient_accumulation_steps,
+            local_rank=-1,
             optim=args.optim,
             output_dir="mamba-chat",
-            logging_steps=50,
+            logging_steps=1,
             save_steps=500,
         ),
         data_collator=data_module.data_collator,

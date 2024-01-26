@@ -2,3 +2,7 @@ __pycache__/
 .pytest_cache/
 .venv/
 .vscode/
+**/runs/*
+serialization_dir/
+
+bert_bookcorpus.token.128/
