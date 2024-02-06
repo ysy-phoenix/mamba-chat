@@ -103,7 +103,8 @@ accelerate launch run_clm_no_trainer.py \
 --block_size 128 \
 --num_train_epochs 1 \
 --checkpointing_steps 2000 \
---profile
+--profile \
+--max_train_steps 100
 ```
 
 **mamba**
@@ -124,9 +125,16 @@ accelerate launch run_mamba_no_trainer.py \
 --block_size 128 \
 --num_train_epochs 1 \
 --checkpointing_steps 2000 \
---profile
+--profile \
+--max_train_steps 100
 ```
 
+## FLOPs
+```python
+# mamba_ssm.ops.triton.layernorm._layer_norm_fwd
+convert = lambda x: x.item() if isinstance(x, torch.Tensor) else x
+M, N = convert(M), convert(N)
+```
 
 ## Citation
 

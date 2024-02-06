@@ -1,0 +1,832 @@
+OPTForCausalLM(
+  #params: 0.13G, #flops: 2.64T
+  (model): OPTModel(
+    #params: 0.13G, #flops: 2.01T
+    (decoder): OPTDecoder(
+      #params: 0.13G, #flops: 2.01T
+      (embed_tokens): Embedding(
+        50272, 768, padding_idx=1
+        #params: 38.61M, #flops: 0
+      )
+      (embed_positions): OPTLearnedPositionalEmbedding(
+        2050, 768
+        #params: 1.57M, #flops: 0
+      )
+      (final_layer_norm): LayerNorm(
+        (768,), eps=1e-05, elementwise_affine=True
+        #params: 1.54K, #flops: 62.91M
+      )
+      (layers): ModuleList(
+        #params: 85.05M, #flops: 2.01T
+        (0): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (1): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (2): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (3): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (4): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (5): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (6): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (7): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (8): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (9): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (10): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+        (11): OPTDecoderLayer(
+          #params: 7.09M, #flops: 0.17T
+          (self_attn): OPTAttention(
+            #params: 2.36M, #flops: 90.19G
+            (k_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (v_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (q_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+            (out_proj): Linear(
+              in_features=768, out_features=768, bias=True
+              #params: 0.59M, #flops: 9.66G
+            )
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+          (fc1): Linear(
+            in_features=768, out_features=3072, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (fc2): Linear(
+            in_features=3072, out_features=768, bias=True
+            #params: 2.36M, #flops: 38.65G
+          )
+          (final_layer_norm): LayerNorm(
+            (768,), eps=1e-05, elementwise_affine=True
+            #params: 1.54K, #flops: 62.91M
+          )
+        )
+      )
+    )
+  )
+  (lm_head): Linear(
+    in_features=768, out_features=50272, bias=False
+    #params: 0, #flops: 0.63T
+  )
+)
+| module                                                   | #parameters or shape   | #flops      |
+|:---------------------------------------------------------|:-----------------------|:------------|
+| model                                                    | 0.125G                 | 2.644T      |
+|  model.decoder                                           |  0.125G                |  2.012T     |
+|   model.decoder.embed_tokens                             |   38.609M              |   0         |
+|    model.decoder.embed_tokens.weight                     |    (50272, 768)        |             |
+|   model.decoder.embed_positions                          |   1.574M               |   0         |
+|    model.decoder.embed_positions.weight                  |    (2050, 768)         |             |
+|   model.decoder.final_layer_norm                         |   1.536K               |   62.915M   |
+|    model.decoder.final_layer_norm.weight                 |    (768,)              |             |
+|    model.decoder.final_layer_norm.bias                   |    (768,)              |             |
+|   model.decoder.layers                                   |   85.054M              |   2.012T    |
+|    model.decoder.layers.0                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.0.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.0.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.0.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.0.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.0.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.0.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.0.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.0.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.0.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.0.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.0.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.0.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.0.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.0.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.0.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.0.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.0.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.0.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.0.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.0.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.0.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.0.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.0.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.0.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.0.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.1                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.1.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.1.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.1.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.1.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.1.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.1.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.1.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.1.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.1.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.1.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.1.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.1.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.1.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.1.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.1.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.1.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.1.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.1.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.1.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.1.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.1.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.1.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.1.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.1.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.1.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.2                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.2.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.2.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.2.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.2.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.2.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.2.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.2.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.2.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.2.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.2.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.2.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.2.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.2.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.2.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.2.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.2.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.2.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.2.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.2.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.2.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.2.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.2.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.2.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.2.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.2.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.3                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.3.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.3.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.3.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.3.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.3.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.3.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.3.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.3.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.3.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.3.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.3.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.3.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.3.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.3.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.3.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.3.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.3.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.3.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.3.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.3.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.3.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.3.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.3.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.3.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.3.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.4                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.4.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.4.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.4.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.4.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.4.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.4.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.4.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.4.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.4.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.4.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.4.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.4.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.4.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.4.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.4.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.4.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.4.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.4.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.4.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.4.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.4.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.4.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.4.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.4.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.4.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.5                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.5.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.5.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.5.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.5.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.5.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.5.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.5.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.5.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.5.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.5.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.5.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.5.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.5.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.5.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.5.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.5.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.5.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.5.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.5.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.5.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.5.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.5.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.5.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.5.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.5.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.6                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.6.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.6.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.6.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.6.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.6.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.6.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.6.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.6.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.6.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.6.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.6.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.6.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.6.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.6.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.6.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.6.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.6.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.6.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.6.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.6.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.6.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.6.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.6.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.6.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.6.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.7                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.7.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.7.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.7.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.7.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.7.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.7.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.7.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.7.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.7.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.7.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.7.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.7.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.7.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.7.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.7.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.7.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.7.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.7.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.7.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.7.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.7.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.7.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.7.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.7.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.7.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.8                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.8.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.8.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.8.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.8.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.8.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.8.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.8.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.8.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.8.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.8.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.8.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.8.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.8.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.8.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.8.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.8.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.8.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.8.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.8.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.8.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.8.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.8.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.8.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.8.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.8.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.9                                |    7.088M              |    0.168T   |
+|     model.decoder.layers.9.self_attn                     |     2.362M             |     90.194G |
+|      model.decoder.layers.9.self_attn.k_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.9.self_attn.k_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.9.self_attn.k_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.9.self_attn.v_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.9.self_attn.v_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.9.self_attn.v_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.9.self_attn.q_proj             |      0.591M            |      9.664G |
+|       model.decoder.layers.9.self_attn.q_proj.weight     |       (768, 768)       |             |
+|       model.decoder.layers.9.self_attn.q_proj.bias       |       (768,)           |             |
+|      model.decoder.layers.9.self_attn.out_proj           |      0.591M            |      9.664G |
+|       model.decoder.layers.9.self_attn.out_proj.weight   |       (768, 768)       |             |
+|       model.decoder.layers.9.self_attn.out_proj.bias     |       (768,)           |             |
+|     model.decoder.layers.9.self_attn_layer_norm          |     1.536K             |     62.915M |
+|      model.decoder.layers.9.self_attn_layer_norm.weight  |      (768,)            |             |
+|      model.decoder.layers.9.self_attn_layer_norm.bias    |      (768,)            |             |
+|     model.decoder.layers.9.fc1                           |     2.362M             |     38.655G |
+|      model.decoder.layers.9.fc1.weight                   |      (3072, 768)       |             |
+|      model.decoder.layers.9.fc1.bias                     |      (3072,)           |             |
+|     model.decoder.layers.9.fc2                           |     2.36M              |     38.655G |
+|      model.decoder.layers.9.fc2.weight                   |      (768, 3072)       |             |
+|      model.decoder.layers.9.fc2.bias                     |      (768,)            |             |
+|     model.decoder.layers.9.final_layer_norm              |     1.536K             |     62.915M |
+|      model.decoder.layers.9.final_layer_norm.weight      |      (768,)            |             |
+|      model.decoder.layers.9.final_layer_norm.bias        |      (768,)            |             |
+|    model.decoder.layers.10                               |    7.088M              |    0.168T   |
+|     model.decoder.layers.10.self_attn                    |     2.362M             |     90.194G |
+|      model.decoder.layers.10.self_attn.k_proj            |      0.591M            |      9.664G |
+|       model.decoder.layers.10.self_attn.k_proj.weight    |       (768, 768)       |             |
+|       model.decoder.layers.10.self_attn.k_proj.bias      |       (768,)           |             |
+|      model.decoder.layers.10.self_attn.v_proj            |      0.591M            |      9.664G |
+|       model.decoder.layers.10.self_attn.v_proj.weight    |       (768, 768)       |             |
+|       model.decoder.layers.10.self_attn.v_proj.bias      |       (768,)           |             |
+|      model.decoder.layers.10.self_attn.q_proj            |      0.591M            |      9.664G |
+|       model.decoder.layers.10.self_attn.q_proj.weight    |       (768, 768)       |             |
+|       model.decoder.layers.10.self_attn.q_proj.bias      |       (768,)           |             |
+|      model.decoder.layers.10.self_attn.out_proj          |      0.591M            |      9.664G |
+|       model.decoder.layers.10.self_attn.out_proj.weight  |       (768, 768)       |             |
+|       model.decoder.layers.10.self_attn.out_proj.bias    |       (768,)           |             |
+|     model.decoder.layers.10.self_attn_layer_norm         |     1.536K             |     62.915M |
+|      model.decoder.layers.10.self_attn_layer_norm.weight |      (768,)            |             |
+|      model.decoder.layers.10.self_attn_layer_norm.bias   |      (768,)            |             |
+|     model.decoder.layers.10.fc1                          |     2.362M             |     38.655G |
+|      model.decoder.layers.10.fc1.weight                  |      (3072, 768)       |             |
+|      model.decoder.layers.10.fc1.bias                    |      (3072,)           |             |
+|     model.decoder.layers.10.fc2                          |     2.36M              |     38.655G |
+|      model.decoder.layers.10.fc2.weight                  |      (768, 3072)       |             |
+|      model.decoder.layers.10.fc2.bias                    |      (768,)            |             |
+|     model.decoder.layers.10.final_layer_norm             |     1.536K             |     62.915M |
+|      model.decoder.layers.10.final_layer_norm.weight     |      (768,)            |             |
+|      model.decoder.layers.10.final_layer_norm.bias       |      (768,)            |             |
+|    model.decoder.layers.11                               |    7.088M              |    0.168T   |
+|     model.decoder.layers.11.self_attn                    |     2.362M             |     90.194G |
+|      model.decoder.layers.11.self_attn.k_proj            |      0.591M            |      9.664G |
+|       model.decoder.layers.11.self_attn.k_proj.weight    |       (768, 768)       |             |
+|       model.decoder.layers.11.self_attn.k_proj.bias      |       (768,)           |             |
+|      model.decoder.layers.11.self_attn.v_proj            |      0.591M            |      9.664G |
+|       model.decoder.layers.11.self_attn.v_proj.weight    |       (768, 768)       |             |
+|       model.decoder.layers.11.self_attn.v_proj.bias      |       (768,)           |             |
+|      model.decoder.layers.11.self_attn.q_proj            |      0.591M            |      9.664G |
+|       model.decoder.layers.11.self_attn.q_proj.weight    |       (768, 768)       |             |
+|       model.decoder.layers.11.self_attn.q_proj.bias      |       (768,)           |             |
+|      model.decoder.layers.11.self_attn.out_proj          |      0.591M            |      9.664G |
+|       model.decoder.layers.11.self_attn.out_proj.weight  |       (768, 768)       |             |
+|       model.decoder.layers.11.self_attn.out_proj.bias    |       (768,)           |             |
+|     model.decoder.layers.11.self_attn_layer_norm         |     1.536K             |     62.915M |
+|      model.decoder.layers.11.self_attn_layer_norm.weight |      (768,)            |             |
+|      model.decoder.layers.11.self_attn_layer_norm.bias   |      (768,)            |             |
+|     model.decoder.layers.11.fc1                          |     2.362M             |     38.655G |
+|      model.decoder.layers.11.fc1.weight                  |      (3072, 768)       |             |
+|      model.decoder.layers.11.fc1.bias                    |      (3072,)           |             |
+|     model.decoder.layers.11.fc2                          |     2.36M              |     38.655G |
+|      model.decoder.layers.11.fc2.weight                  |      (768, 3072)       |             |
+|      model.decoder.layers.11.fc2.bias                    |      (768,)            |             |
+|     model.decoder.layers.11.final_layer_norm             |     1.536K             |     62.915M |
+|      model.decoder.layers.11.final_layer_norm.weight     |      (768,)            |             |
+|      model.decoder.layers.11.final_layer_norm.bias       |      (768,)            |             |
+|  lm_head                                                 |                        |  0.633T     |
+dict_items([('layer_norm', 1.572864), ('linear', 2024.137555968), ('bmm', 618.475290624)])
+GFlops:  2644.185710592 Params:  125239296
+Unsupported operator aten::embedding encountered 2 time(s)
+Unsupported operator aten::add encountered 42 time(s)
+Unsupported operator aten::sub encountered 2 time(s)
+Unsupported operator aten::lt encountered 1 time(s)
+Unsupported operator aten::masked_fill_ encountered 1 time(s)
+Unsupported operator aten::rsub encountered 1 time(s)
+Unsupported operator aten::cumsum encountered 1 time(s)
+Unsupported operator aten::mul encountered 37 time(s)
+Unsupported operator aten::softmax encountered 12 time(s)

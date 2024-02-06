@@ -261,6 +261,7 @@ def parse_args():
         f"model={args.model_name_or_path.split('/')[-1]}_"
         f"batch={args.per_device_train_batch_size}_"
         f"lr={args.learning_rate}_"
+        f"max_train_steps={args.max_train_steps}_"
         f"{timestamp}"
     )
     args.output_dir = os.path.join(args.output_dir, log_filename)
@@ -604,19 +605,15 @@ def main():
         else:
             active_dataloader = train_dataloader
 
-        # Conditionally start profiling
-        if args.profile and accelerator.is_main_process:
-            prof = profile(
-                activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
-                on_trace_ready=tensorboard_trace_handler(args.profile_dir),
-                record_shapes=True,
-                profile_memory=True,
-                with_flops=True,
-                with_stack=True
-            )
-            prof.__enter__()  # Manually start the profiler
-
         for step, batch in enumerate(active_dataloader):
+            # Conditionally start profiling
+            if args.profile and accelerator.is_main_process and step == 1:
+                prof = profile(
+                    activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
+                    on_trace_ready=tensorboard_trace_handler(args.profile_dir),
+                    record_shapes=True,
+                )
+                prof.__enter__()  # Manually start the profiler
             with accelerator.accumulate(model):
                 # outputs = model(**batch)
                 # loss = outputs.loss
@@ -656,6 +653,7 @@ def main():
         # Stop profiling and write data to TensorBoard
         if args.profile and accelerator.is_main_process:
             prof.__exit__(None, None, None)
+            print(prof.key_averages().table(sort_by="cuda_time_total"))
 
         model.eval()
         losses = []
